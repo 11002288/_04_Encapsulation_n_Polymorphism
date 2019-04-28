@@ -33,6 +33,7 @@ public class EncapsulateTheData {
 	 public void setItems(int num) {
 		 if(num<=-1) {
 			 num = 0; 
+			 throw new IllegalArgumentException();
 		 }
 		 this.itemsReceived = num;
 	 }
@@ -42,6 +43,13 @@ public class EncapsulateTheData {
 	 public void setDegrees(float test) {
 		 if(test>=0 && test<=360) {
 			 this.degreesTurned = test;
+			 throw new IllegalArgumentException();
+		 }else if(test>360) {
+			 this.degreesTurned = 360;
+			 throw new IllegalArgumentException();
+		 }else if(test<0){
+			 this.degreesTurned = 0;
+			 throw new IllegalArgumentException();
 		 }
 	 }
 	 public String getClat() {
@@ -52,6 +60,7 @@ public class EncapsulateTheData {
 			 space = " ";
 		 }
 		 this.nomenclature = space;
+		 throw new IllegalArgumentException();
 	 }
 	 public Object getObj() {
 		 return this.memberObj;
@@ -59,9 +68,9 @@ public class EncapsulateTheData {
 	 public void setObj(Object any) {
 		 if (any instanceof String) {
 			Object new_name = any;
-			
 		} 
-			 
+		 this.memberObj = any;
+		 throw new IllegalArgumentException();
 		 }
 	 
 	public static void main(String[] args) {
