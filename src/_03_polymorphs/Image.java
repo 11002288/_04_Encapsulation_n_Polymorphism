@@ -3,19 +3,17 @@ package _03_polymorphs;
 import java.awt.Color;
 import java.awt.Graphics;
 
-public class BluePolymorph extends Polymorph{
-
-	BluePolymorph(int x, int y) {
+public class Image extends Polymorph{
+	Image(int x, int y) {
 		super(x, y);
 	}
 
 	@Override
 	public void draw(Graphics g) {
 		g.setColor(Color.blue);
-		g.fillRect(5, 5, 50, 50);
+		g.fillRect(getX(), getY(), 50, 50);
 	}
 	public void update() {
 		
 	}
-	
 }
