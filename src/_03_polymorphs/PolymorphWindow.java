@@ -6,6 +6,7 @@ import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.util.ArrayList;
 
 import javax.swing.JFrame;
@@ -13,7 +14,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
-public class PolymorphWindow extends JPanel implements ActionListener{
+public class PolymorphWindow extends JPanel implements ActionListener, MouseListener{
 	public static final int WIDTH = 900;
 	public static final int HEIGHT = 600;
 
@@ -40,6 +41,7 @@ public class PolymorphWindow extends JPanel implements ActionListener{
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		window.pack();
 		window.setVisible(true);
+		this.addMouseListener(this);
 
 		
 		  bluePoly = new BluePolymorph(50, 50); 
@@ -81,6 +83,41 @@ public class PolymorphWindow extends JPanel implements ActionListener{
 		}
 		
 	}
+
+	@Override
+	public void mouseClicked(MouseEvent e) {
+		// TODO Auto-generated method stub
+		if(e.getPoint().x<=170||e.getPoint().x>=100) {
+			if(e.getPoint().y<=370||e.getPoint().y>=300) {
+				JOptionPane.showMessageDialog(null, "test");
+			}
+		}
+	}
+
+	@Override
+	public void mousePressed(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseReleased(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseEntered(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseExited(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+	
 
 	
 
