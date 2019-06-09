@@ -8,11 +8,13 @@ public class Doctor{
 	
 	
 
-	public void assignPatient(Patient patient) {
+	public void assignPatient(Patient patient) throws DoctorFullException {
 		// TODO Auto-generated method stub
 		if (paist.size()<=2) {
 			paist.add(patient);
-		}else {}	
+		}else {
+			throw new DoctorFullException();
+		}	
 	}
 	
 	public List<Patient> getPatients() {
